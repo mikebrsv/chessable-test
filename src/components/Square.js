@@ -1,9 +1,9 @@
-import React from 'react'
+import Piece from './Piece'
 
-const Square = ({ color, index }) => {
+const Square = ({ color, piece }) => {
   return (
     <div className={`square ${color}`}>
-      {index}
+      {piece && (<Piece piece={piece} />)}
     </div>
   )
 }
