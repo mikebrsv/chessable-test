@@ -2,7 +2,7 @@ import Board from './components/Board';
 
 function App() {
   const spawnPawn = () => {
-    console.log("spawned!")
+    console.log('spawned!')
   }
 
   return (

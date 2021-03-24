@@ -1,9 +1,7 @@
-import Piece from './Piece'
-
-const Square = ({ color, piece }) => {
+const Square = ({ squareColor, children }) => {
   return (
-    <div className={`square ${color}`}>
-      {piece && (<Piece piece={piece} />)}
+    <div className={`square ${squareColor}`}>
+      {children}
     </div>
   )
 }

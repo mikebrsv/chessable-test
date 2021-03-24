@@ -1,32 +1,37 @@
 import Square from './Square';
+import Piece from './Piece';
 import { faChessPawn } from '@fortawesome/free-solid-svg-icons'
 
 const Board = () => {
   const renderSquare = (index) => {
-    let color;
+    let squareColor;
     let piece;
+    let pieceColor;
 
     if (
-      (index >= 0 && index <= 7)
+      (index >= 0 && index <= 7) // BLACK PIECES 1st row
       || (index >= 16 && index <= 23)
       || (index >= 32 && index <= 39)
-      || (index >= 48 && index <= 55)
+      || (index >= 48 && index <= 55) // WHITE PIECES 2nd row
     ) {
-      index % 2 === 0 ? color = 'white' : color = 'black'
-    } else {
-      index === 10 && (piece = faChessPawn)
-      index % 2 === 0 ? color = 'black' : color = 'white'
+      if (index === 48) { piece = faChessPawn; pieceColor = 'white' }
+      index % 2 === 0 ? squareColor = 'white' : squareColor = 'black'
+    } else { // BLACK PIECES 2nd row & WHITE PIECES 1st row
+      if (index === 10) { piece = faChessPawn; pieceColor = 'black' }
+      index % 2 === 0 ? squareColor = 'black' : squareColor = 'white'
     }
 
-    return <Square key={index} color={color} piece={piece} />
+    return (
+      <Square key={index} squareColor={squareColor}>
+        {piece && <Piece piece={piece} pieceColor={pieceColor} />}
+      </Square>
+    )
   }
 
   return (
-    <>
-      <div className="board">
-        {[...Array(64)].map((_, index) => renderSquare(index))}
-      </div>
-    </>
+    <div className="board">
+      {[...Array(64)].map((_, index) => renderSquare(index))}
+    </div>
   )
 }
 
