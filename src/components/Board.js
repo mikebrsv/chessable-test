@@ -2,7 +2,7 @@ import Square from './Square';
 import Piece from './Piece';
 import { faChessPawn } from '@fortawesome/free-solid-svg-icons'
 
-const Board = () => {
+const Board = ({ spawnIndex }) => {
   const renderSquare = (index) => {
     let squareColor;
     let piece;
@@ -14,7 +14,8 @@ const Board = () => {
       || (index >= 32 && index <= 39)
       || (index >= 48 && index <= 55) // WHITE PIECES 2nd row
     ) {
-      if (index === 48) { piece = faChessPawn; pieceColor = 'white' }
+      if (spawnIndex === index) { piece = faChessPawn; pieceColor = 'white' }
+
       index % 2 === 0 ? squareColor = 'white' : squareColor = 'black'
     } else { // BLACK PIECES 2nd row & WHITE PIECES 1st row
       if (index === 10) { piece = faChessPawn; pieceColor = 'black' }
