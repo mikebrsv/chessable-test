@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after
+  box-sizing: border-box
+
+body
+  margin: 0
+
+.app
+  padding: 16px
+  display: flex
+  justify-content: center
+
+.board
+  display: flex
+  flex-wrap: wrap
+  width: 30vw
+  height: 30vw
+
+.board-row
+  display: flex
+
+.square
+  flex: 0 0 auto
+  width: 12.5%
+  height: 12.5%
+  display: flex
+  align-items: center
+  justify-content: center
+  color: red
+
+  &.white
+    background-color: #ccc
+
+  &.black
+    background-color: #000
