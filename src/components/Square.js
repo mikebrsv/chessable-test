@@ -1,7 +1,9 @@
-const Square = ({ squareColor, children }) => {
+const Square = ({ color, children, onSquareClickHandler, legal }) => {
   return (
-    <div className={`square ${squareColor}`}>
-      {children}
+    <div
+      className={`square ${color} ${legal ? 'legal' : ''}`}
+      onClick={onSquareClickHandler}
+    >{children}
     </div>
   )
 }

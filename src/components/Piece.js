@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Piece = ({ piece, pieceColor }) => {
-  return <FontAwesomeIcon icon={piece} className={`piece ${pieceColor}`} />
+const Piece = ({ icon, color }) => {
+  return <FontAwesomeIcon icon={icon} className={`piece ${color}`} />
 }
 
 export default Piece

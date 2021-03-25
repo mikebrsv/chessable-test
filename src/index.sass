@@ -32,6 +32,7 @@ body
   align-items: center
   justify-content: center
   position: relative
+  transition: background-color .2s
 
   &::before
     position: absolute
@@ -113,6 +114,16 @@ body
 
   &.black
     background-color: #595f69
+
+  &.legal
+    cursor: pointer
+
+    &:hover
+      &.white
+        background-color: #949597
+
+      &.black
+        background-color: #2d2f33
 
 .piece
   font-size: 42px
