@@ -23,6 +23,7 @@ body
   flex-wrap: wrap
   width: 500px
   height: 500px
+  margin-left: 30px
 
 .square
   flex: 0 0 auto
@@ -177,3 +178,36 @@ body
 
   .board
     margin-bottom: 25px
+    width: 80vw
+    height: 80vw
+
+  .piece
+    font-size: 6.4vw
+
+@media (max-width: 575.98px)
+  .board
+    margin-top: 30px
+    margin-left: 10px
+
+  .square
+    &::after,
+    &::before
+      font-size: 14px
+
+    &::after
+      bottom: -20px 
+
+    &::before
+      left: -20px
+
+  .btn
+    font-size: 16px
+
+  .status-spawn
+    padding: 10px 15px
+    font-size: 14px
+    width: 100%
+    top: 0
+    right: 0
+    left: 0
+    text-align: center
